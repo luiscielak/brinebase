@@ -16,26 +16,114 @@
             overflow: hidden;
             background: white;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
         }
 
         .wireframe {
-            background: #f5f5f5;
+            background: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
         }
         .wireframe * {
-            border: 1px dashed #666;
-            padding: 8px;
-            margin-bottom: 8px;
+            border: none;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 12px 0;
+            margin-bottom: 0;
         }
         .wireframe-label {
-            color: #666;
-            font-size: 0.875rem;
-            font-family: monospace;
+            color: #999;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .wireframe section {
+            margin-bottom: 24px;
+            padding: 0 16px;
+        }
+        .wireframe header, 
+        .wireframe footer {
+            padding: 16px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .wireframe footer {
+            border-top: 1px solid #e5e5e5;
+            border-bottom: none;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .wireframe button {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            padding: 8px 16px;
+            width: 100%;
+            text-align: left;
+            margin: 4px 0;
+        }
+        .wireframe input,
+        .wireframe textarea,
+        .wireframe select {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            padding: 8px;
+            width: 100%;
+            margin: 4px 0;
+        }
+        .wireframe .grid {
+            display: grid;
+            grid-gap: 16px;
+            margin: 8px 0;
+        }
+        .wireframe .grid-cols-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+        .wireframe .flex {
+            display: flex;
+            align-items: center;
+        }
+        .wireframe .justify-between {
+            justify-content: space-between;
+        }
+        .wireframe .justify-around {
+            justify-content: space-around;
         }
         .mid-fi {
             background: white;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
         }
         .prototype {
             background: white;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .fidelity-section {
+            margin-bottom: 4rem;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 375px);
+            gap: 2rem;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        @media (min-width: 1200px) {
+            .designs-grid {
+                grid-template-columns: repeat(3, 375px);
+            }
         }
     </style>
 </head>
@@ -51,147 +139,166 @@
         </nav>
 
         <!-- Low Fidelity Section -->
-        <section id="low-fi" class="mb-16">
+        <section id="low-fi" class="fidelity-section">
             <h2 class="text-2xl font-semibold mb-6">Low Fidelity Wireframes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Landing Page Wireframe -->
-                <div class="device-frame">
-                    <div class="wireframe h-full p-4">
-                        <header>
-                            <div class="flex justify-between items-center">
-                                <span class="wireframe-label">Logo: BrineBase</span>
-                                <span class="wireframe-label">Menu Button</span>
-                            </div>
-                        </header>
-
-                        <main>
-                            <section class="text-center my-8">
-                                <span class="wireframe-label">Hero Section</span>
-                                <h1>Track Your Ferments</h1>
-                                <p>Document and monitor fermentation progress</p>
-                            </section>
-
-                            <section>
-                                <span class="wireframe-label">Stats Overview</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <span class="wireframe-label">Active Projects Counter</span>
-                                        <p>12 Active</p>
-                                    </div>
-                                    <div>
-                                        <span class="wireframe-label">Completed Projects Counter</span>
-                                        <p>48 Completed</p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section>
-                                <span class="wireframe-label">Primary Action</span>
-                                <button class="w-full">Start New Project</button>
-                            </section>
-                        </main>
-                    </div>
-                </div>
-
+            <div class="designs-grid">
                 <!-- Dashboard Wireframe -->
                 <div class="device-frame">
-                    <div class="wireframe h-full p-4">
+                    <div class="wireframe h-full">
                         <header>
-                            <div class="flex justify-between items-center">
-                                <span class="wireframe-label">Dashboard Title</span>
-                                <span class="wireframe-label">Filter Button</span>
+                            <div class="flex justify-between">
+                                <span>BrineBase</span>
+                                <div class="flex gap-4">
+                                    <span>Search</span>
+                                    <span>Menu</span>
+                                </div>
                             </div>
                         </header>
 
                         <main>
                             <section>
-                                <span class="wireframe-label">Project Filters</span>
-                                <div class="flex gap-2 overflow-x-auto">
-                                    <span>All</span>
-                                    <span>Active</span>
-                                    <span>Completed</span>
+                                <span class="wireframe-label">Overview</span>
+                                <div class="grid grid-cols-2">
+                                    <div>
+                                        <span class="wireframe-label">Active</span>
+                                        <p>5 Projects</p>
+                                    </div>
+                                    <div>
+                                        <span class="wireframe-label">Today</span>
+                                        <p>3 Check-ins</p>
+                                    </div>
                                 </div>
                             </section>
 
                             <section>
-                                <span class="wireframe-label">Project List</span>
-                                <div class="space-y-4">
+                                <span class="wireframe-label">Quick Actions</span>
+                                <button>New Project</button>
+                                <button>Daily Check-in</button>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Active Projects</span>
+                                <div>
                                     <div>
-                                        <span class="wireframe-label">Project Card</span>
                                         <h3>Kimchi Project</h3>
-                                        <p>Progress Bar: 75%</p>
+                                        <p>Day 5 of 14</p>
                                     </div>
                                     <div>
-                                        <span class="wireframe-label">Project Card</span>
-                                        <h3>Sauerkraut Project</h3>
-                                        <p>Progress Bar: 50%</p>
+                                        <h3>Sauerkraut</h3>
+                                        <p>Day 3 of 21</p>
                                     </div>
                                 </div>
                             </section>
                         </main>
 
                         <footer>
-                            <span class="wireframe-label">Navigation Bar</span>
                             <div class="flex justify-around">
                                 <span>Home</span>
-                                <span>New</span>
+                                <span>Projects</span>
                                 <span>Profile</span>
                             </div>
                         </footer>
                     </div>
                 </div>
 
-                <!-- New Ferment Wireframe -->
+                <!-- Project Details Wireframe -->
                 <div class="device-frame">
-                    <div class="wireframe h-full p-4">
+                    <div class="wireframe h-full">
                         <header>
-                            <div class="flex items-center">
-                                <span class="wireframe-label">Back Button</span>
-                                <span class="wireframe-label">New Ferment Title</span>
+                            <div class="flex">
+                                <span>Back</span>
+                                <span>Project Details</span>
                             </div>
                         </header>
 
                         <main>
-                            <form class="space-y-4">
-                                <div>
-                                    <span class="wireframe-label">Project Name Input</span>
-                                    <input type="text" placeholder="Enter project name">
-                                </div>
+                            <section>
+                                <span class="wireframe-label">Project Info</span>
+                                <h2>Napa Cabbage Kimchi</h2>
+                                <p>Started: March 15, 2024</p>
+                                <p>Day 5 of 14</p>
+                            </section>
 
-                                <div>
-                                    <span class="wireframe-label">Project Type Select</span>
-                                    <select>
-                                        <option>Select type...</option>
-                                    </select>
-                                </div>
+                            <section>
+                                <span class="wireframe-label">Actions</span>
+                                <button>Daily Check-in</button>
+                                <button>Add Photo</button>
+                            </section>
 
+                            <section>
+                                <span class="wireframe-label">Recent Activity</span>
                                 <div>
-                                    <span class="wireframe-label">Description Textarea</span>
-                                    <textarea rows="4"></textarea>
+                                    <p>Today's Check-in</p>
+                                    <p>Temperature: 20°C</p>
+                                    <p>pH Level: 4.5</p>
                                 </div>
+                            </section>
 
-                                <div>
-                                    <span class="wireframe-label">Duration Input</span>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <input type="number" placeholder="Duration">
-                                        <select>
-                                            <option>Days</option>
-                                        </select>
+                            <section>
+                                <span class="wireframe-label">Progress</span>
+                                <div class="grid grid-cols-2">
+                                    <div>
+                                        <span class="wireframe-label">Temperature</span>
+                                        <div class="h-32 bg-gray-100"></div>
+                                    </div>
+                                    <div>
+                                        <span class="wireframe-label">pH Level</span>
+                                        <div class="h-32 bg-gray-100"></div>
                                     </div>
                                 </div>
+                            </section>
+                        </main>
+                    </div>
+                </div>
 
-                                <div>
-                                    <span class="wireframe-label">Photo Upload</span>
-                                    <div class="border-2 border-dashed p-4 text-center">
-                                        <p>Click to upload</p>
-                                    </div>
-                                </div>
+                <!-- Daily Check-in Wireframe -->
+                <div class="device-frame">
+                    <div class="wireframe h-full">
+                        <header>
+                            <div class="flex">
+                                <span>Back</span>
+                                <span>Daily Check-in</span>
+                            </div>
+                        </header>
 
-                                <div>
-                                    <span class="wireframe-label">Submit Button</span>
-                                    <button class="w-full">Create Project</button>
+                        <main>
+                            <section>
+                                <span class="wireframe-label">Project</span>
+                                <h2>Napa Cabbage Kimchi</h2>
+                                <p>Day 5 of 14</p>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Photo</span>
+                                <button>Take Photo</button>
+                                <button>Upload Photo</button>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Measurements</span>
+                                <div class="grid grid-cols-2">
+                                    <input type="number" placeholder="Temperature">
+                                    <input type="number" placeholder="pH Level">
                                 </div>
-                            </form>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Notes</span>
+                                <textarea rows="3" placeholder="Add observations..."></textarea>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Status</span>
+                                <div>
+                                    <label><input type="checkbox"> Submerged in brine</label>
+                                    <label><input type="checkbox"> No mold present</label>
+                                    <label><input type="checkbox"> Normal smell</label>
+                                </div>
+                            </section>
+
+                            <section>
+                                <button>Save Check-in</button>
+                            </section>
                         </main>
                     </div>
                 </div>
@@ -199,9 +306,9 @@
         </section>
 
         <!-- Medium Fidelity Section -->
-        <section id="mid-fi" class="mb-16">
+        <section id="mid-fi" class="fidelity-section">
             <h2 class="text-2xl font-semibold mb-6">Medium Fidelity Designs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="designs-grid">
                 <!-- Landing Page Mid-Fi -->
                 <div class="device-frame">
                     <div class="mid-fi w-full p-4">
@@ -302,9 +409,9 @@
         </section>
 
         <!-- High Fidelity Section -->
-        <section id="high-fi" class="mb-16">
+        <section id="high-fi" class="fidelity-section">
             <h2 class="text-2xl font-semibold mb-6">High Fidelity Prototypes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="designs-grid">
                 <!-- Landing Page Hi-Fi -->
                 <div class="device-frame">
                     <div class="prototype w-full overflow-hidden rounded-3xl">
