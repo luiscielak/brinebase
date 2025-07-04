@@ -1,16 +1,17 @@
 {
-  "name": "@brinebase/marketing",
+  "name": "brinebase-marketing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "@brinebase/ui": "workspace:*"
+    "chart.js": "^4.4.1",
+    "d3": "^7.8.5"
+  },
+  "devDependencies": {
+    "vite": "^5.0.12"
   }
 } 

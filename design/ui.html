@@ -83,6 +83,14 @@
             overflow: hidden;
             background: white;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .device-frame > div {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .device-frame:last-child {
@@ -182,6 +190,13 @@
             height: 100%;
             overflow-y: auto;
             position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .prototype.w-full {
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .fidelity-section {

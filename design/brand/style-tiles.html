@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrineBase Style Tiles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            line-height: 1.5;
+            padding: 2rem;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        /* Style Tile Grid */
+        .style-tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .style-tile {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        /* BrineBase Theme */
+        .brinebase-theme {
+            --primary: #4C9F70;    /* Ferment Green */
+            --secondary: #FFCF56;   /* Brine Gold */
+            --accent: #E25E3E;      /* Hot Chili */
+            --text: #2B2B2B;
+            --background: #FAF9F6;  /* Creamy Neutral */
+            --border: #E5E7EB;
+        }
+
+        /* Remove old themes */
+        .deep-brine,
+        .salt-crystal,
+        .natural-clay,
+        .ocean-mineral {
+            display: none;
+        }
+
+        /* Typography Styles */
+        .style-tile h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .style-tile h3 {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.25rem;
+            margin: 1rem 0;
+            color: var(--text);
+        }
+
+        /* Color Swatches */
+        .swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .swatch {
+            height: 80px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .swatch::after {
+            content: attr(data-color);
+            position: absolute;
+            bottom: -1.5rem;
+            left: 0;
+            font-size: 0.75rem;
+            color: var(--text);
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        /* Typography Examples */
+        .typography {
+            margin: 2rem 0;
+        }
+
+        .type-sample {
+            margin: 1rem 0;
+        }
+
+        .heading-1 {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .heading-2 {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .body-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        /* UI Elements */
+        .ui-elements {
+            margin: 2rem 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+
+        .button-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .button-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .button-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin: 1rem 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag-active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .tag-complete {
+            background: var(--accent);
+            color: white;
+        }
+
+        .tag-alert {
+            background: var(--alert);
+            color: white;
+        }
+
+        .mono {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+
+        .data-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* Data Display Examples */
+        .data-display {
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .measurement {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .measurement-label {
+            color: var(--text);
+            opacity: 0.7;
+            font-size: 0.875rem;
+        }
+
+        .measurement-value {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .measurement-unit {
+            color: var(--text);
+            opacity: 0.7;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BrineBase Style Tiles</h1>
+
+        <div class="style-tiles">
+            <!-- BrineBase Theme -->
+            <div class="style-tile brinebase-theme">
+                <h2>BrineBase Theme</h2>
+                
+                <div class="swatches">
+                    <div class="swatch" style="background: var(--primary);" data-color="#4C9F70"></div>
+                    <div class="swatch" style="background: var(--secondary);" data-color="#FFCF56"></div>
+                    <div class="swatch" style="background: var(--accent);" data-color="#E25E3E"></div>
+                    <div class="swatch" style="background: var(--background);" data-color="#FAF9F6"></div>
+                </div>
+
+                <div class="typography">
+                    <h3>Typography</h3>
+                    <div class="type-sample">
+                        <div class="heading-1">Your Fermentation Lab, Upgraded</div>
+                        <div class="heading-2">Track. Taste. Tweak.</div>
+                        <div class="body-text">Document, monitor, and perfect your fermentation projects. From crunchy pickles to bubbling kombucha, BrineBase helps you combine tradition with precision.</div>
+                    </div>
+                </div>
+
+                <div class="ui-elements">
+                    <h3>UI Elements</h3>
+                    <div>
+                        <a href="#" class="button button-primary">Start New Batch</a>
+                        <a href="#" class="button button-secondary">View Recipes</a>
+                        <a href="#" class="button button-outline">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h3>Napa Cabbage Kimchi</h3>
+                        <p class="mono">Day 5 of 14 • pH 4.2 • 22°C</p>
+                    </div>
+                    <div>
+                        <span class="tag tag-active">Fermenting</span>
+                        <span class="tag tag-complete">Ready</span>
+                        <span class="tag tag-alert">Check pH</span>
+                    </div>
+                </div>
+
+                <div class="data-viz">
+                    <h3>Data Visualization</h3>
+                    <div class="chart-example">
+                        <!-- Add simple chart example -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-display">
+            <h3>Data Display</h3>
+            <div class="measurement">
+                <span class="measurement-label">pH</span>
+                <span class="measurement-value">4.2</span>
+            </div>
+            <div class="measurement">
+                <span class="measurement-label">Temp</span>
+                <span class="measurement-value">22</span>
+                <span class="measurement-unit">°C</span>
+            </div>
+            <div class="measurement">
+                <span class="measurement-label">Salt</span>
+                <span class="measurement-value">2.5</span>
+                <span class="measurement-unit">%</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
