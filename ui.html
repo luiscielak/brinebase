@@ -110,14 +110,99 @@
 
         .fidelity-section {
             margin-bottom: 4rem;
+            overflow: hidden;
         }
 
         .designs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, 375px);
+            display: flex;
             gap: 2rem;
-            justify-content: center;
             padding: 1rem;
+            padding-bottom: 2rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .designs-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .designs-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .designs-grid::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 4px;
+        }
+
+        .designs-grid::-webkit-scrollbar-thumb:hover {
+            background: #ccc;
+        }
+
+        .device-frame {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+
+        .journey-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .journey-nav button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e5e5e5;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .journey-nav button.active {
+            background: #9ca3af;
+        }
+
+        .fidelity-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .fidelity-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .fidelity-label::before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .low-fi .fidelity-label::before {
+            background: #9ca3af;
+        }
+
+        .mid-fi .fidelity-label::before {
+            background: #60a5fa;
+        }
+
+        .high-fi .fidelity-label::before {
+            background: #34d399;
         }
 
         @media (min-width: 1200px) {
@@ -139,8 +224,11 @@
         </nav>
 
         <!-- Low Fidelity Section -->
-        <section id="low-fi" class="fidelity-section">
-            <h2 class="text-2xl font-semibold mb-6">Low Fidelity Wireframes</h2>
+        <section id="low-fi" class="fidelity-section low-fi">
+            <div class="fidelity-header">
+                <h2 class="text-2xl font-semibold">Low Fidelity Wireframes</h2>
+                <div class="fidelity-label">Planning Phase</div>
+            </div>
             <div class="designs-grid">
                 <!-- Dashboard Wireframe -->
                 <div class="device-frame">
@@ -492,11 +580,22 @@
                     </div>
                 </div>
             </div>
+            <div class="journey-nav">
+                <button class="active" aria-label="Dashboard"></button>
+                <button aria-label="Project Details"></button>
+                <button aria-label="Daily Check-in"></button>
+                <button aria-label="Recipe View"></button>
+                <button aria-label="Community Feed"></button>
+                <button aria-label="Environmental Data"></button>
+            </div>
         </section>
 
         <!-- Medium Fidelity Section -->
-        <section id="mid-fi" class="fidelity-section">
-            <h2 class="text-2xl font-semibold mb-6">Medium Fidelity Designs</h2>
+        <section id="mid-fi" class="fidelity-section mid-fi">
+            <div class="fidelity-header">
+                <h2 class="text-2xl font-semibold">Medium Fidelity Designs</h2>
+                <div class="fidelity-label">Design Phase</div>
+            </div>
             <div class="designs-grid">
                 <!-- Landing Page Mid-Fi -->
                 <div class="device-frame">
@@ -794,11 +893,22 @@
                     </div>
                 </div>
             </div>
+            <div class="journey-nav">
+                <button class="active" aria-label="Dashboard"></button>
+                <button aria-label="Project Details"></button>
+                <button aria-label="Daily Check-in"></button>
+                <button aria-label="Recipe View"></button>
+                <button aria-label="Community Feed"></button>
+                <button aria-label="Environmental Data"></button>
+            </div>
         </section>
 
         <!-- High Fidelity Section -->
-        <section id="high-fi" class="fidelity-section">
-            <h2 class="text-2xl font-semibold mb-6">High Fidelity Prototypes</h2>
+        <section id="high-fi" class="fidelity-section high-fi">
+            <div class="fidelity-header">
+                <h2 class="text-2xl font-semibold">High Fidelity Prototypes</h2>
+                <div class="fidelity-label">Development Phase</div>
+            </div>
             <div class="designs-grid">
                 <!-- Landing Page Hi-Fi -->
                 <div class="device-frame">
@@ -1298,6 +1408,14 @@
                         </main>
                     </div>
                 </div>
+            </div>
+            <div class="journey-nav">
+                <button class="active" aria-label="Dashboard"></button>
+                <button aria-label="Project Details"></button>
+                <button aria-label="Daily Check-in"></button>
+                <button aria-label="Recipe View"></button>
+                <button aria-label="Community Feed"></button>
+                <button aria-label="Environmental Data"></button>
             </div>
         </section>
     </div>
