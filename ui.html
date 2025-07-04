@@ -7,20 +7,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/font/lucide.min.css" rel="stylesheet">
     <style>
+        .device-frame {
+            width: 375px;
+            height: 812px;
+            border: 12px solid #1a1a1a;
+            border-radius: 48px;
+            position: relative;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
         .wireframe {
-            border: 2px solid #666;
             background: #f5f5f5;
         }
         .wireframe * {
-            border: 1px dashed #999;
+            border: 1px dashed #666;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+        .wireframe-label {
+            color: #666;
+            font-size: 0.875rem;
+            font-family: monospace;
         }
         .mid-fi {
             background: white;
-            border: 1px solid #e5e7eb;
         }
         .prototype {
             background: white;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
@@ -40,38 +55,144 @@
             <h2 class="text-2xl font-semibold mb-6">Low Fidelity Wireframes</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Landing Page Wireframe -->
-                <div class="wireframe w-[375px] h-[812px] p-4">
-                    <div class="h-16 mb-4"></div>
-                    <div class="h-40 mb-4"></div>
-                    <div class="h-12 mb-4"></div>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div class="h-32"></div>
-                        <div class="h-32"></div>
+                <div class="device-frame">
+                    <div class="wireframe h-full p-4">
+                        <header>
+                            <div class="flex justify-between items-center">
+                                <span class="wireframe-label">Logo: BrineBase</span>
+                                <span class="wireframe-label">Menu Button</span>
+                            </div>
+                        </header>
+
+                        <main>
+                            <section class="text-center my-8">
+                                <span class="wireframe-label">Hero Section</span>
+                                <h1>Track Your Ferments</h1>
+                                <p>Document and monitor fermentation progress</p>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Stats Overview</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <span class="wireframe-label">Active Projects Counter</span>
+                                        <p>12 Active</p>
+                                    </div>
+                                    <div>
+                                        <span class="wireframe-label">Completed Projects Counter</span>
+                                        <p>48 Completed</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Primary Action</span>
+                                <button class="w-full">Start New Project</button>
+                            </section>
+                        </main>
                     </div>
-                    <div class="h-16"></div>
                 </div>
 
                 <!-- Dashboard Wireframe -->
-                <div class="wireframe w-[375px] h-[812px] p-4">
-                    <div class="h-16 mb-4"></div>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div class="h-24"></div>
-                        <div class="h-24"></div>
+                <div class="device-frame">
+                    <div class="wireframe h-full p-4">
+                        <header>
+                            <div class="flex justify-between items-center">
+                                <span class="wireframe-label">Dashboard Title</span>
+                                <span class="wireframe-label">Filter Button</span>
+                            </div>
+                        </header>
+
+                        <main>
+                            <section>
+                                <span class="wireframe-label">Project Filters</span>
+                                <div class="flex gap-2 overflow-x-auto">
+                                    <span>All</span>
+                                    <span>Active</span>
+                                    <span>Completed</span>
+                                </div>
+                            </section>
+
+                            <section>
+                                <span class="wireframe-label">Project List</span>
+                                <div class="space-y-4">
+                                    <div>
+                                        <span class="wireframe-label">Project Card</span>
+                                        <h3>Kimchi Project</h3>
+                                        <p>Progress Bar: 75%</p>
+                                    </div>
+                                    <div>
+                                        <span class="wireframe-label">Project Card</span>
+                                        <h3>Sauerkraut Project</h3>
+                                        <p>Progress Bar: 50%</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </main>
+
+                        <footer>
+                            <span class="wireframe-label">Navigation Bar</span>
+                            <div class="flex justify-around">
+                                <span>Home</span>
+                                <span>New</span>
+                                <span>Profile</span>
+                            </div>
+                        </footer>
                     </div>
-                    <div class="h-40 mb-4"></div>
-                    <div class="h-40 mb-4"></div>
-                    <div class="h-16"></div>
                 </div>
 
                 <!-- New Ferment Wireframe -->
-                <div class="wireframe w-[375px] h-[812px] p-4">
-                    <div class="h-16 mb-4"></div>
-                    <div class="space-y-4">
-                        <div class="h-12"></div>
-                        <div class="h-12"></div>
-                        <div class="h-32"></div>
-                        <div class="h-12"></div>
-                        <div class="h-12"></div>
+                <div class="device-frame">
+                    <div class="wireframe h-full p-4">
+                        <header>
+                            <div class="flex items-center">
+                                <span class="wireframe-label">Back Button</span>
+                                <span class="wireframe-label">New Ferment Title</span>
+                            </div>
+                        </header>
+
+                        <main>
+                            <form class="space-y-4">
+                                <div>
+                                    <span class="wireframe-label">Project Name Input</span>
+                                    <input type="text" placeholder="Enter project name">
+                                </div>
+
+                                <div>
+                                    <span class="wireframe-label">Project Type Select</span>
+                                    <select>
+                                        <option>Select type...</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <span class="wireframe-label">Description Textarea</span>
+                                    <textarea rows="4"></textarea>
+                                </div>
+
+                                <div>
+                                    <span class="wireframe-label">Duration Input</span>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <input type="number" placeholder="Duration">
+                                        <select>
+                                            <option>Days</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="wireframe-label">Photo Upload</span>
+                                    <div class="border-2 border-dashed p-4 text-center">
+                                        <p>Click to upload</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="wireframe-label">Submit Button</span>
+                                    <button class="w-full">Create Project</button>
+                                </div>
+                            </form>
+                        </main>
                     </div>
                 </div>
             </div>
@@ -82,94 +203,100 @@
             <h2 class="text-2xl font-semibold mb-6">Medium Fidelity Designs</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Landing Page Mid-Fi -->
-                <div class="mid-fi w-[375px] h-[812px] p-4">
-                    <header class="flex justify-between items-center mb-6">
-                        <div class="text-xl font-semibold">BrineBase</div>
-                        <button class="p-2">Menu</button>
-                    </header>
-                    
-                    <div class="mb-8">
-                        <h1 class="text-2xl font-bold mb-2">Track Your Ferments</h1>
-                        <p class="text-gray-600">Document, monitor, and perfect your fermentation projects.</p>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-gray-100 p-4 rounded-lg">
-                            <h3 class="font-medium">Active</h3>
-                            <p class="text-2xl font-bold">12</p>
+                <div class="device-frame">
+                    <div class="mid-fi w-full p-4">
+                        <header class="flex justify-between items-center mb-6">
+                            <div class="text-xl font-semibold">BrineBase</div>
+                            <button class="p-2">Menu</button>
+                        </header>
+                        
+                        <div class="mb-8">
+                            <h1 class="text-2xl font-bold mb-2">Track Your Ferments</h1>
+                            <p class="text-gray-600">Document, monitor, and perfect your fermentation projects.</p>
                         </div>
-                        <div class="bg-gray-100 p-4 rounded-lg">
-                            <h3 class="font-medium">Completed</h3>
-                            <p class="text-2xl font-bold">48</p>
-                        </div>
-                    </div>
 
-                    <button class="w-full bg-gray-900 text-white py-3 rounded-lg mb-4">
-                        Start New Project
-                    </button>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-medium">Active</h3>
+                                <p class="text-2xl font-bold">12</p>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-medium">Completed</h3>
+                                <p class="text-2xl font-bold">48</p>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-gray-900 text-white py-3 rounded-lg mb-4">
+                            Start New Project
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Dashboard Mid-Fi -->
-                <div class="mid-fi w-[375px] h-[812px] p-4">
-                    <header class="flex justify-between items-center mb-6">
-                        <div class="text-xl font-semibold">Dashboard</div>
-                        <button class="p-2">Filter</button>
-                    </header>
+                <div class="device-frame">
+                    <div class="mid-fi w-full p-4">
+                        <header class="flex justify-between items-center mb-6">
+                            <div class="text-xl font-semibold">Dashboard</div>
+                            <button class="p-2">Filter</button>
+                        </header>
 
-                    <div class="space-y-4 mb-8">
-                        <div class="bg-gray-100 p-4 rounded-lg">
-                            <div class="flex justify-between mb-2">
-                                <h3 class="font-medium">Kimchi</h3>
-                                <span class="text-green-600">Active</span>
+                        <div class="space-y-4 mb-8">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <div class="flex justify-between mb-2">
+                                    <h3 class="font-medium">Kimchi</h3>
+                                    <span class="text-green-600">Active</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full w-3/4"></div>
+                                </div>
                             </div>
-                            <div class="h-2 bg-gray-200 rounded-full">
-                                <div class="h-2 bg-green-500 rounded-full w-3/4"></div>
-                            </div>
-                        </div>
 
-                        <div class="bg-gray-100 p-4 rounded-lg">
-                            <div class="flex justify-between mb-2">
-                                <h3 class="font-medium">Sauerkraut</h3>
-                                <span class="text-green-600">Active</span>
-                            </div>
-                            <div class="h-2 bg-gray-200 rounded-full">
-                                <div class="h-2 bg-green-500 rounded-full w-1/2"></div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <div class="flex justify-between mb-2">
+                                    <h3 class="font-medium">Sauerkraut</h3>
+                                    <span class="text-green-600">Active</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full w-1/2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- New Ferment Mid-Fi -->
-                <div class="mid-fi w-[375px] h-[812px] p-4">
-                    <header class="flex items-center mb-6">
-                        <button class="p-2 mr-2">Back</button>
-                        <div class="text-xl font-semibold">New Ferment</div>
-                    </header>
+                <div class="device-frame">
+                    <div class="mid-fi w-full p-4">
+                        <header class="flex items-center mb-6">
+                            <button class="p-2 mr-2">Back</button>
+                            <div class="text-xl font-semibold">New Ferment</div>
+                        </header>
 
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Project Name</label>
-                            <input type="text" class="w-full border rounded-lg p-2">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Type</label>
-                            <select class="w-full border rounded-lg p-2">
-                                <option>Vegetable Ferment</option>
-                                <option>Kombucha</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Project Name</label>
+                                <input type="text" class="w-full border rounded-lg p-2">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Type</label>
+                                <select class="w-full border rounded-lg p-2">
+                                    <option>Vegetable Ferment</option>
+                                    <option>Kombucha</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
 
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Description</label>
-                            <textarea class="w-full border rounded-lg p-2" rows="4"></textarea>
-                        </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Description</label>
+                                <textarea class="w-full border rounded-lg p-2" rows="4"></textarea>
+                            </div>
 
-                        <button class="w-full bg-gray-900 text-white py-3 rounded-lg">
-                            Create Project
-                        </button>
-                    </form>
+                            <button class="w-full bg-gray-900 text-white py-3 rounded-lg">
+                                Create Project
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -179,37 +306,85 @@
             <h2 class="text-2xl font-semibold mb-6">High Fidelity Prototypes</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Landing Page Hi-Fi -->
-                <div class="prototype w-[375px] h-[812px] overflow-hidden rounded-3xl">
-                    <header class="flex justify-between items-center p-6 bg-white border-b">
-                        <div class="text-xl font-semibold text-emerald-600">BrineBase</div>
-                        <button class="p-2 hover:bg-gray-100 rounded-full">
-                            <i class="lucide lucide-menu h-6 w-6"></i>
-                        </button>
-                    </header>
-                    
-                    <main class="p-6">
-                        <div class="mb-8">
-                            <h1 class="text-3xl font-bold mb-3">Track Your Ferments</h1>
-                            <p class="text-gray-600 leading-relaxed">Document, monitor, and perfect your fermentation projects with ease.</p>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 mb-8">
-                            <div class="bg-emerald-50 p-4 rounded-xl">
-                                <h3 class="text-emerald-600 font-medium mb-1">Active</h3>
-                                <p class="text-3xl font-bold text-emerald-900">12</p>
+                <div class="device-frame">
+                    <div class="prototype w-full overflow-hidden rounded-3xl">
+                        <header class="flex justify-between items-center p-6 bg-white border-b">
+                            <div class="text-xl font-semibold text-emerald-600">BrineBase</div>
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <i class="lucide lucide-menu h-6 w-6"></i>
+                            </button>
+                        </header>
+                        
+                        <main class="p-6">
+                            <div class="mb-8">
+                                <h1 class="text-3xl font-bold mb-3">Track Your Ferments</h1>
+                                <p class="text-gray-600 leading-relaxed">Document, monitor, and perfect your fermentation projects with ease.</p>
                             </div>
-                            <div class="bg-amber-50 p-4 rounded-xl">
-                                <h3 class="text-amber-600 font-medium mb-1">Completed</h3>
-                                <p class="text-3xl font-bold text-amber-900">48</p>
+
+                            <div class="grid grid-cols-2 gap-4 mb-8">
+                                <div class="bg-emerald-50 p-4 rounded-xl">
+                                    <h3 class="text-emerald-600 font-medium mb-1">Active</h3>
+                                    <p class="text-3xl font-bold text-emerald-900">12</p>
+                                </div>
+                                <div class="bg-amber-50 p-4 rounded-xl">
+                                    <h3 class="text-amber-600 font-medium mb-1">Completed</h3>
+                                    <p class="text-3xl font-bold text-amber-900">48</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <button class="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
-                            Start New Project
-                        </button>
+                            <button class="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
+                                Start New Project
+                            </button>
 
-                        <div class="mt-8">
-                            <h2 class="text-lg font-semibold mb-4">Recent Projects</h2>
+                            <div class="mt-8">
+                                <h2 class="text-lg font-semibold mb-4">Recent Projects</h2>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-xl border border-gray-100">
+                                        <div class="flex justify-between items-start mb-3">
+                                            <div>
+                                                <h3 class="font-medium">Napa Cabbage Kimchi</h3>
+                                                <p class="text-sm text-gray-500">Started 3 days ago</p>
+                                            </div>
+                                            <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
+                                        </div>
+                                        <div class="h-2 bg-gray-100 rounded-full">
+                                            <div class="h-2 bg-emerald-500 rounded-full w-3/4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+
+                <!-- Dashboard Hi-Fi -->
+                <div class="device-frame">
+                    <div class="prototype w-full overflow-hidden rounded-3xl">
+                        <header class="flex justify-between items-center p-6 bg-white border-b">
+                            <div class="text-xl font-semibold">Dashboard</div>
+                            <div class="flex gap-2">
+                                <button class="p-2 hover:bg-gray-100 rounded-full">
+                                    <i class="lucide lucide-search h-5 w-5"></i>
+                                </button>
+                                <button class="p-2 hover:bg-gray-100 rounded-full">
+                                    <i class="lucide lucide-filter h-5 w-5"></i>
+                                </button>
+                            </div>
+                        </header>
+
+                        <main class="p-6">
+                            <div class="flex gap-4 mb-6 overflow-x-auto pb-2">
+                                <button class="px-4 py-2 bg-emerald-600 text-white rounded-full whitespace-nowrap">
+                                    All Projects
+                                </button>
+                                <button class="px-4 py-2 bg-white border text-gray-600 rounded-full whitespace-nowrap">
+                                    Active
+                                </button>
+                                <button class="px-4 py-2 bg-white border text-gray-600 rounded-full whitespace-nowrap">
+                                    Completed
+                                </button>
+                            </div>
+
                             <div class="space-y-4">
                                 <div class="bg-white p-4 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start mb-3">
@@ -219,167 +394,125 @@
                                         </div>
                                         <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
                                     </div>
-                                    <div class="h-2 bg-gray-100 rounded-full">
+                                    <div class="h-2 bg-gray-100 rounded-full mb-3">
                                         <div class="h-2 bg-emerald-500 rounded-full w-3/4"></div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-
-                <!-- Dashboard Hi-Fi -->
-                <div class="prototype w-[375px] h-[812px] overflow-hidden rounded-3xl">
-                    <header class="flex justify-between items-center p-6 bg-white border-b">
-                        <div class="text-xl font-semibold">Dashboard</div>
-                        <div class="flex gap-2">
-                            <button class="p-2 hover:bg-gray-100 rounded-full">
-                                <i class="lucide lucide-search h-5 w-5"></i>
-                            </button>
-                            <button class="p-2 hover:bg-gray-100 rounded-full">
-                                <i class="lucide lucide-filter h-5 w-5"></i>
-                            </button>
-                        </div>
-                    </header>
-
-                    <main class="p-6">
-                        <div class="flex gap-4 mb-6 overflow-x-auto pb-2">
-                            <button class="px-4 py-2 bg-emerald-600 text-white rounded-full whitespace-nowrap">
-                                All Projects
-                            </button>
-                            <button class="px-4 py-2 bg-white border text-gray-600 rounded-full whitespace-nowrap">
-                                Active
-                            </button>
-                            <button class="px-4 py-2 bg-white border text-gray-600 rounded-full whitespace-nowrap">
-                                Completed
-                            </button>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="bg-white p-4 rounded-xl border border-gray-100">
-                                <div class="flex justify-between items-start mb-3">
-                                    <div>
-                                        <h3 class="font-medium">Napa Cabbage Kimchi</h3>
-                                        <p class="text-sm text-gray-500">Started 3 days ago</p>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-gray-500">75% Complete</span>
+                                        <span class="text-gray-500">2 days remaining</span>
                                     </div>
-                                    <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
                                 </div>
-                                <div class="h-2 bg-gray-100 rounded-full mb-3">
-                                    <div class="h-2 bg-emerald-500 rounded-full w-3/4"></div>
-                                </div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">75% Complete</span>
-                                    <span class="text-gray-500">2 days remaining</span>
-                                </div>
-                            </div>
 
-                            <div class="bg-white p-4 rounded-xl border border-gray-100">
-                                <div class="flex justify-between items-start mb-3">
-                                    <div>
-                                        <h3 class="font-medium">Classic Sauerkraut</h3>
-                                        <p class="text-sm text-gray-500">Started 1 week ago</p>
+                                <div class="bg-white p-4 rounded-xl border border-gray-100">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <div>
+                                            <h3 class="font-medium">Classic Sauerkraut</h3>
+                                            <p class="text-sm text-gray-500">Started 1 week ago</p>
+                                        </div>
+                                        <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
                                     </div>
-                                    <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
-                                </div>
-                                <div class="h-2 bg-gray-100 rounded-full mb-3">
-                                    <div class="h-2 bg-emerald-500 rounded-full w-1/2"></div>
-                                </div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">50% Complete</span>
-                                    <span class="text-gray-500">1 week remaining</span>
+                                    <div class="h-2 bg-gray-100 rounded-full mb-3">
+                                        <div class="h-2 bg-emerald-500 rounded-full w-1/2"></div>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-gray-500">50% Complete</span>
+                                        <span class="text-gray-500">1 week remaining</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </main>
+                        </main>
 
-                    <footer class="fixed bottom-0 w-[375px] bg-white border-t">
-                        <div class="flex justify-around p-4">
-                            <button class="p-2 text-emerald-600">
-                                <i class="lucide lucide-layout-dashboard h-6 w-6"></i>
-                            </button>
-                            <button class="p-2 text-gray-400">
-                                <i class="lucide lucide-plus-circle h-6 w-6"></i>
-                            </button>
-                            <button class="p-2 text-gray-400">
-                                <i class="lucide lucide-user h-6 w-6"></i>
-                            </button>
-                        </div>
-                    </footer>
+                        <footer class="fixed bottom-0 w-full bg-white border-t">
+                            <div class="flex justify-around p-4">
+                                <button class="p-2 text-emerald-600">
+                                    <i class="lucide lucide-layout-dashboard h-6 w-6"></i>
+                                </button>
+                                <button class="p-2 text-gray-400">
+                                    <i class="lucide lucide-plus-circle h-6 w-6"></i>
+                                </button>
+                                <button class="p-2 text-gray-400">
+                                    <i class="lucide lucide-user h-6 w-6"></i>
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
                 </div>
 
                 <!-- New Ferment Hi-Fi -->
-                <div class="prototype w-[375px] h-[812px] overflow-hidden rounded-3xl">
-                    <header class="flex items-center p-6 bg-white border-b">
-                        <button class="p-2 -ml-2 hover:bg-gray-100 rounded-full mr-2">
-                            <i class="lucide lucide-arrow-left h-5 w-5"></i>
-                        </button>
-                        <div class="text-xl font-semibold">New Ferment</div>
-                    </header>
+                <div class="device-frame">
+                    <div class="prototype w-full overflow-hidden rounded-3xl">
+                        <header class="flex items-center p-6 bg-white border-b">
+                            <button class="p-2 -ml-2 hover:bg-gray-100 rounded-full mr-2">
+                                <i class="lucide lucide-arrow-left h-5 w-5"></i>
+                            </button>
+                            <div class="text-xl font-semibold">New Ferment</div>
+                        </header>
 
-                    <main class="p-6">
-                        <form class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Project Name</label>
-                                <input 
-                                    type="text" 
-                                    class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                                    placeholder="e.g., Napa Cabbage Kimchi"
-                                >
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Type</label>
-                                <select class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none appearance-none bg-white">
-                                    <option>Vegetable Ferment</option>
-                                    <option>Kombucha</option>
-                                    <option>Kefir</option>
-                                    <option>Hot Sauce</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
+                        <main class="p-6">
+                            <form class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Project Name</label>
+                                    <input 
+                                        type="text" 
+                                        class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                        placeholder="e.g., Napa Cabbage Kimchi"
+                                    >
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Type</label>
+                                    <select class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none appearance-none bg-white">
+                                        <option>Vegetable Ferment</option>
+                                        <option>Kombucha</option>
+                                        <option>Kefir</option>
+                                        <option>Hot Sauce</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-                                <textarea 
-                                    class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" 
-                                    rows="4"
-                                    placeholder="Add notes about your fermentation project..."
-                                ></textarea>
-                            </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                    <textarea 
+                                        class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" 
+                                        rows="4"
+                                        placeholder="Add notes about your fermentation project..."
+                                    ></textarea>
+                                </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Expected Duration</label>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <input 
-                                            type="number" 
-                                            class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                                            placeholder="Duration"
-                                        >
-                                    </div>
-                                    <div>
-                                        <select class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none appearance-none bg-white">
-                                            <option>Days</option>
-                                            <option>Weeks</option>
-                                            <option>Months</option>
-                                        </select>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Expected Duration</label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <input 
+                                                type="number" 
+                                                class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                                placeholder="Duration"
+                                            >
+                                        </div>
+                                        <div>
+                                            <select class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none appearance-none bg-white">
+                                                <option>Days</option>
+                                                <option>Weeks</option>
+                                                <option>Months</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Add Photo</label>
-                                <button class="w-full border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-emerald-500 transition-colors">
-                                    <i class="lucide lucide-image-plus h-8 w-8 mx-auto mb-2 text-gray-400"></i>
-                                    <p class="text-sm text-gray-500">Click to upload or drag and drop</p>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Add Photo</label>
+                                    <button class="w-full border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-emerald-500 transition-colors">
+                                        <i class="lucide lucide-image-plus h-8 w-8 mx-auto mb-2 text-gray-400"></i>
+                                        <p class="text-sm text-gray-500">Click to upload or drag and drop</p>
+                                    </button>
+                                </div>
+
+                                <button class="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
+                                    Create Project
                                 </button>
-                            </div>
-
-                            <button class="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
-                                Create Project
-                            </button>
-                        </form>
-                    </main>
+                            </form>
+                        </main>
+                    </div>
                 </div>
             </div>
         </section>
