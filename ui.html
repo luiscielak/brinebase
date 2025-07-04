@@ -7,7 +7,74 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/font/lucide.min.css" rel="stylesheet">
     <style>
+        body {
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .max-w-7xl {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+        }
+
+        .fidelity-section {
+            margin: 0;
+            padding: 4rem 0 6rem;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .fidelity-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+        }
+
+        .designs-grid {
+            display: flex;
+            gap: 2rem;
+            padding: 0 2rem;
+            overflow-x: auto;
+            overflow-y: visible;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            margin-right: -2rem;
+        }
+
+        .designs-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        h1.text-3xl {
+            padding: 2rem 2rem 1rem;
+            margin: 0;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 600;
+        }
+
+        /* Remove all background colors from containers */
+        .low-fi,
+        .mid-fi,
+        .high-fi,
+        .wireframe,
+        .prototype,
+        .mid-fi *,
+        footer {
+            background: transparent;
+        }
+
+        /* Only set white background for content inside device frames */
         .device-frame {
+            scroll-snap-align: start;
+            flex-shrink: 0;
             width: 375px;
             height: 812px;
             border: 12px solid #1a1a1a;
@@ -15,17 +82,27 @@
             position: relative;
             overflow: hidden;
             background: white;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            flex-shrink: 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
         }
 
-        .wireframe {
-            background: #fafafa;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            height: 100%;
-            overflow-y: auto;
-            position: relative;
+        .device-frame:last-child {
+            margin-right: 2rem;
         }
+
+        /* Content inside device frames */
+        .wireframe main,
+        .mid-fi main,
+        .prototype main,
+        .wireframe header,
+        .mid-fi header,
+        .prototype header,
+        .wireframe footer,
+        .mid-fi footer,
+        .prototype footer {
+            background: white;
+            padding: 1.5rem;
+        }
+
         .wireframe * {
             border: none;
             border-bottom: 1px solid #e5e5e5;
@@ -96,7 +173,6 @@
             justify-content: space-around;
         }
         .mid-fi {
-            background: white;
             height: 100%;
             overflow-y: auto;
             position: relative;
@@ -279,11 +355,11 @@
                             </section>
                         </main>
 
-                        <footer>
-                            <div class="flex justify-around">
-                                <span>Home</span>
-                                <span>Projects</span>
-                                <span>Profile</span>
+                        <footer class="w-full py-4">
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-gray-600">Home</a>
+                                <a href="#" class="text-gray-600">Projects</a>
+                                <a href="#" class="text-gray-600">Profile</a>
                             </div>
                         </footer>
                     </div>
@@ -508,11 +584,11 @@
                             </section>
                         </main>
 
-                        <footer>
-                            <div class="flex justify-around">
-                                <span>Home</span>
-                                <span>Community</span>
-                                <span>Profile</span>
+                        <footer class="w-full py-4">
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-gray-600">Home</a>
+                                <a href="#" class="text-gray-600">Community</a>
+                                <a href="#" class="text-gray-600">Profile</a>
                             </div>
                         </footer>
                     </div>
@@ -579,14 +655,6 @@
                         </main>
                     </div>
                 </div>
-            </div>
-            <div class="journey-nav">
-                <button class="active" aria-label="Dashboard"></button>
-                <button aria-label="Project Details"></button>
-                <button aria-label="Daily Check-in"></button>
-                <button aria-label="Recipe View"></button>
-                <button aria-label="Community Feed"></button>
-                <button aria-label="Environmental Data"></button>
             </div>
         </section>
 
@@ -820,11 +888,11 @@
                             </section>
                         </main>
 
-                        <footer class="fixed bottom-0 w-full bg-white border-t">
-                            <div class="flex justify-around p-4">
-                                <button class="p-2 text-gray-400">Home</button>
-                                <button class="p-2 text-gray-900">Community</button>
-                                <button class="p-2 text-gray-400">Profile</button>
+                        <footer class="w-full py-4">
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-gray-600">Home</a>
+                                <a href="#" class="text-gray-600">Community</a>
+                                <a href="#" class="text-gray-600">Profile</a>
                             </div>
                         </footer>
                     </div>
@@ -892,14 +960,6 @@
                         </main>
                     </div>
                 </div>
-            </div>
-            <div class="journey-nav">
-                <button class="active" aria-label="Dashboard"></button>
-                <button aria-label="Project Details"></button>
-                <button aria-label="Daily Check-in"></button>
-                <button aria-label="Recipe View"></button>
-                <button aria-label="Community Feed"></button>
-                <button aria-label="Environmental Data"></button>
             </div>
         </section>
 
@@ -1027,17 +1087,11 @@
                             </div>
                         </main>
 
-                        <footer class="fixed bottom-0 w-full bg-white border-t">
-                            <div class="flex justify-around p-4">
-                                <button class="p-2 text-emerald-600">
-                                    <i class="lucide lucide-layout-dashboard h-6 w-6"></i>
-                                </button>
-                                <button class="p-2 text-gray-400">
-                                    <i class="lucide lucide-plus-circle h-6 w-6"></i>
-                                </button>
-                                <button class="p-2 text-gray-400">
-                                    <i class="lucide lucide-user h-6 w-6"></i>
-                                </button>
+                        <footer class="w-full py-4">
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-gray-600">Home</a>
+                                <a href="#" class="text-gray-600">Projects</a>
+                                <a href="#" class="text-gray-600">Profile</a>
                             </div>
                         </footer>
                     </div>
@@ -1289,17 +1343,11 @@
                             </section>
                         </main>
 
-                        <footer class="fixed bottom-0 w-full bg-white border-t">
-                            <div class="flex justify-around p-4">
-                                <button class="p-2 text-gray-400">
-                                    <i class="lucide lucide-layout-dashboard h-6 w-6"></i>
-                                </button>
-                                <button class="p-2 text-emerald-600">
-                                    <i class="lucide lucide-users h-6 w-6"></i>
-                                </button>
-                                <button class="p-2 text-gray-400">
-                                    <i class="lucide lucide-user h-6 w-6"></i>
-                                </button>
+                        <footer class="w-full py-4">
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-gray-600">Home</a>
+                                <a href="#" class="text-gray-600">Community</a>
+                                <a href="#" class="text-gray-600">Profile</a>
                             </div>
                         </footer>
                     </div>
@@ -1409,15 +1457,12 @@
                     </div>
                 </div>
             </div>
-            <div class="journey-nav">
-                <button class="active" aria-label="Dashboard"></button>
-                <button aria-label="Project Details"></button>
-                <button aria-label="Daily Check-in"></button>
-                <button aria-label="Recipe View"></button>
-                <button aria-label="Community Feed"></button>
-                <button aria-label="Environmental Data"></button>
-            </div>
         </section>
     </div>
+    <footer class="w-full py-4">
+        <div class="container mx-auto px-4">
+            <p class="text-sm text-gray-500">BrineBase UI Designs</p>
+        </div>
+    </footer>
 </body>
 </html> 
