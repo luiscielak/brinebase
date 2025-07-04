@@ -3,595 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrineBase UI Design</title>
+    <title>BrineBase UI Designs</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/font/lucide.min.css" rel="stylesheet">
     <style>
-        /* Custom styles for device frame and layout */
-        .device-frame {
-            width: 375px;
-            min-width: 375px; /* Ensure minimum width */
-            height: 812px;
-            border: 12px solid #1a1a1a;
-            border-radius: 48px;
-            position: relative;
-            overflow: hidden;
-            background: white;
-            margin: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            flex-shrink: 0; /* Prevent frame from shrinking */
-        }
-        
-        .page-container {
-            display: flex;
-            overflow-x: auto;
-            padding: 2rem;
+        .wireframe {
+            border: 2px solid #666;
             background: #f5f5f5;
-            min-height: 100vh;
-            align-items: center;
-            min-width: fit-content; /* Ensure container fits all frames */
         }
-
-        /* Content container inside device frame */
-        .content-container {
-            width: 100%;
-            min-width: 351px; /* 375px - 24px for borders */
-            height: 100%;
-            overflow-x: hidden;
+        .wireframe * {
+            border: 1px dashed #999;
         }
-
-        /* Gradient backgrounds */
-        .gradient-primary {
-            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+        .mid-fi {
+            background: white;
+            border: 1px solid #e5e7eb;
         }
-        
-        .gradient-secondary {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        }
-
-        /* Custom animations */
-        .hover-scale {
-            transition: transform 0.2s ease;
-        }
-        
-        .hover-scale:hover {
-            transform: scale(1.02);
-        }
-
-        /* Custom scrollbar */
-        .custom-scrollbar {
-            scrollbar-width: thin;
-            scrollbar-color: #9CA3AF transparent;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background-color: #9CA3AF;
-            border-radius: 20px;
-        }
-
-        /* Ensure minimum widths for grid layouts */
-        .grid-2-cols {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(150px, 1fr));
-            gap: 1rem;
+        .prototype {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
-<body>
-    <div class="page-container">
-        <!-- Landing Page -->
-        <div class="device-frame">
-            <div class="content-container h-full gradient-primary p-6 flex flex-col">
-                <!-- Logo and Hero -->
-                <div class="flex-1 flex flex-col items-center justify-center text-center space-y-8">
-                    <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
-                        <i data-lucide="jar" class="w-12 h-12 text-emerald-600"></i>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">BrineBase UI Designs</h1>
+        
+        <!-- Design System Navigation -->
+        <nav class="mb-8 flex gap-4">
+            <a href="#low-fi" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Low Fidelity</a>
+            <a href="#mid-fi" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Medium Fidelity</a>
+            <a href="#high-fi" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">High Fidelity</a>
+        </nav>
+
+        <!-- Low Fidelity Section -->
+        <section id="low-fi" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6">Low Fidelity Wireframes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Landing Page Wireframe -->
+                <div class="wireframe w-[375px] h-[812px] p-4">
+                    <div class="h-16 mb-4"></div>
+                    <div class="h-40 mb-4"></div>
+                    <div class="h-12 mb-4"></div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="h-32"></div>
+                        <div class="h-32"></div>
                     </div>
-                    <h1 class="text-4xl font-bold text-gray-900">BrineBase</h1>
-                    <p class="text-gray-600 text-lg max-w-xs">
-                        Track, perfect, and share your fermentation journey
-                    </p>
+                    <div class="h-16"></div>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="space-y-4 w-full">
-                    <button class="w-full bg-emerald-600 text-white rounded-xl py-4 font-medium hover-scale flex items-center justify-center gap-2">
-                        <i data-lucide="log-in" class="w-5 h-5"></i>
-                        Sign In
-                    </button>
-                    <button class="w-full bg-white text-emerald-600 rounded-xl py-4 font-medium border border-emerald-600 hover-scale flex items-center justify-center gap-2">
-                        <i data-lucide="user-plus" class="w-5 h-5"></i>
-                        Create Account
-                    </button>
+                <!-- Dashboard Wireframe -->
+                <div class="wireframe w-[375px] h-[812px] p-4">
+                    <div class="h-16 mb-4"></div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="h-24"></div>
+                        <div class="h-24"></div>
+                    </div>
+                    <div class="h-40 mb-4"></div>
+                    <div class="h-40 mb-4"></div>
+                    <div class="h-16"></div>
+                </div>
+
+                <!-- New Ferment Wireframe -->
+                <div class="wireframe w-[375px] h-[812px] p-4">
+                    <div class="h-16 mb-4"></div>
+                    <div class="space-y-4">
+                        <div class="h-12"></div>
+                        <div class="h-12"></div>
+                        <div class="h-32"></div>
+                        <div class="h-12"></div>
+                        <div class="h-12"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Dashboard Page -->
-        <div class="device-frame">
-            <div class="content-container h-full gradient-secondary flex flex-col">
-                <!-- Header -->
-                <div class="p-6 flex items-center justify-between">
-                    <h2 class="text-xl font-bold text-gray-900">My Ferments</h2>
-                    <button class="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center hover-scale">
-                        <i data-lucide="plus" class="w-6 h-6 text-emerald-600"></i>
-                    </button>
-                </div>
+        <!-- Medium Fidelity Section -->
+        <section id="mid-fi" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6">Medium Fidelity Designs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Landing Page Mid-Fi -->
+                <div class="mid-fi w-[375px] h-[812px] p-4">
+                    <header class="flex justify-between items-center mb-6">
+                        <div class="text-xl font-semibold">BrineBase</div>
+                        <button class="p-2">Menu</button>
+                    </header>
+                    
+                    <div class="mb-8">
+                        <h1 class="text-2xl font-bold mb-2">Track Your Ferments</h1>
+                        <p class="text-gray-600">Document, monitor, and perfect your fermentation projects.</p>
+                    </div>
 
-                <!-- Ferments List -->
-                <div class="flex-1 px-6 pb-6 overflow-y-auto space-y-4">
-                    <!-- Active Ferments -->
-                    <div class="bg-white rounded-2xl p-4 shadow-sm hover-scale">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-medium text-gray-900">Kimchi</h3>
-                            <span class="text-sm text-emerald-600">3 days left</span>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h3 class="font-medium">Active</h3>
+                            <p class="text-2xl font-bold">12</p>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-emerald-600 rounded-full h-2" style="width: 75%"></div>
-                        </div>
-                        <div class="mt-4 flex items-center space-x-2">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Spicy</span>
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Tangy</span>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h3 class="font-medium">Completed</h3>
+                            <p class="text-2xl font-bold">48</p>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-4 shadow-sm hover-scale">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-medium text-gray-900">Sauerkraut</h3>
-                            <span class="text-sm text-emerald-600">1 week left</span>
+                    <button class="w-full bg-gray-900 text-white py-3 rounded-lg mb-4">
+                        Start New Project
+                    </button>
+                </div>
+
+                <!-- Dashboard Mid-Fi -->
+                <div class="mid-fi w-[375px] h-[812px] p-4">
+                    <header class="flex justify-between items-center mb-6">
+                        <div class="text-xl font-semibold">Dashboard</div>
+                        <button class="p-2">Filter</button>
+                    </header>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="font-medium">Kimchi</h3>
+                                <span class="text-green-600">Active</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-green-500 rounded-full w-3/4"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-emerald-600 rounded-full h-2" style="width: 45%"></div>
-                        </div>
-                        <div class="mt-4 flex items-center space-x-2">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Sour</span>
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Crunchy</span>
+
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="font-medium">Sauerkraut</h3>
+                                <span class="text-green-600">Active</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-green-500 rounded-full w-1/2"></div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bg-white rounded-2xl p-4 shadow-sm hover-scale">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-medium text-gray-900">Pickled Carrots</h3>
-                            <span class="text-sm text-emerald-600">2 weeks left</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-emerald-600 rounded-full h-2" style="width: 25%"></div>
-                        </div>
-                        <div class="mt-4 flex items-center space-x-2">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Sweet</span>
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Ginger</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Navigation Bar -->
-                <div class="bg-white border-t border-gray-200 px-6 py-4 flex justify-around">
-                    <button class="text-emerald-600 flex flex-col items-center">
-                        <i data-lucide="home" class="w-6 h-6"></i>
-                        <span class="text-xs mt-1">Home</span>
-                    </button>
-                    <button class="text-gray-400 flex flex-col items-center">
-                        <i data-lucide="plus-circle" class="w-6 h-6"></i>
-                        <span class="text-xs mt-1">New</span>
-                    </button>
-                    <button class="text-gray-400 flex flex-col items-center">
-                        <i data-lucide="user" class="w-6 h-6"></i>
-                        <span class="text-xs mt-1">Profile</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+                <!-- New Ferment Mid-Fi -->
+                <div class="mid-fi w-[375px] h-[812px] p-4">
+                    <header class="flex items-center mb-6">
+                        <button class="p-2 mr-2">Back</button>
+                        <div class="text-xl font-semibold">New Ferment</div>
+                    </header>
 
-        <!-- New Ferment Page (Updated) -->
-        <div class="device-frame">
-            <div class="content-container h-full gradient-secondary flex flex-col">
-                <!-- Header -->
-                <div class="p-6 flex items-center justify-between border-b border-gray-100">
-                    <button class="text-gray-600">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <h2 class="text-xl font-bold text-gray-900">New Ferment</h2>
-                    <div class="w-6"></div>
-                </div>
-
-                <!-- Form -->
-                <div class="flex-1 p-6 overflow-y-auto custom-scrollbar">
-                    <form class="space-y-6">
-                        <!-- Recipe Name -->
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium text-gray-700">Recipe Name</label>
-                            <input type="text" placeholder="Enter recipe name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors" />
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Project Name</label>
+                            <input type="text" class="w-full border rounded-lg p-2">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Type</label>
+                            <select class="w-full border rounded-lg p-2">
+                                <option>Vegetable Ferment</option>
+                                <option>Kombucha</option>
+                                <option>Other</option>
+                            </select>
                         </div>
 
-                        <!-- Recipe Type -->
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium text-gray-700">Recipe Type</label>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button type="button" class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">
-                                    <i data-lucide="sprout" class="w-6 h-6 mx-auto mb-1"></i>
-                                    Fermentation
-                                </button>
-                                <button type="button" class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">
-                                    <i data-lucide="pickle" class="w-6 h-6 mx-auto mb-1"></i>
-                                    Pickling
-                                </button>
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Description</label>
+                            <textarea class="w-full border rounded-lg p-2" rows="4"></textarea>
                         </div>
 
-                        <!-- Ingredients -->
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium text-gray-700">Ingredients</label>
-                            <textarea rows="4" placeholder="Enter ingredients list" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"></textarea>
-                        </div>
-
-                        <!-- Instructions -->
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium text-gray-700">Instructions</label>
-                            <textarea rows="4" placeholder="Enter recipe instructions" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"></textarea>
-                        </div>
-
-                        <!-- Timeline -->
-                        <div class="space-y-4">
-                            <label class="block text-sm font-medium text-gray-700">Timeline</label>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs text-gray-500 mb-1">Start Date</label>
-                                    <input type="date" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors" />
-                                </div>
-                                <div>
-                                    <label class="block text-xs text-gray-500 mb-1">Ready Date</label>
-                                    <input type="date" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Image Upload -->
-                        <div class="space-y-3">
-                            <label class="block text-sm font-medium text-gray-700">Photos</label>
-                            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center">
-                                <i data-lucide="image-plus" class="w-12 h-12 mx-auto text-gray-400"></i>
-                                <p class="mt-2 text-sm text-gray-600">Tap to add photos</p>
-                            </div>
-                        </div>
+                        <button class="w-full bg-gray-900 text-white py-3 rounded-lg">
+                            Create Project
+                        </button>
                     </form>
                 </div>
-
-                <!-- Submit Button -->
-                <div class="p-6 border-t border-gray-100">
-                    <button class="w-full bg-emerald-600 text-white rounded-xl py-4 font-medium hover-scale">
-                        Create Ferment
-                    </button>
-                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Tasting Entry Page -->
-        <div class="device-frame">
-            <div class="content-container h-full gradient-secondary flex flex-col">
-                <!-- Header -->
-                <div class="p-6 flex items-center justify-between border-b border-gray-100">
-                    <button class="text-gray-600">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <h2 class="text-xl font-bold text-gray-900">Record Tasting</h2>
-                    <div class="w-6"></div>
-                </div>
-
-                <!-- Content -->
-                <div class="flex-1 p-6 overflow-y-auto custom-scrollbar">
-                    <div class="space-y-6">
-                        <!-- Recipe Info -->
-                        <div class="bg-white rounded-xl p-4 shadow-sm">
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="jar" class="w-5 h-5 text-emerald-600"></i>
-                                <h3 class="font-medium text-gray-900">Traditional Kimchi</h3>
-                            </div>
-                            <p class="text-sm text-gray-500 mt-1">Day 5 of 7</p>
-                            <div class="mt-3 w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-emerald-600 rounded-full h-2" style="width: 70%"></div>
-                            </div>
+        <!-- High Fidelity Section -->
+        <section id="high-fi" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6">High Fidelity Prototypes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Landing Page Hi-Fi -->
+                <div class="prototype w-[375px] h-[812px] overflow-hidden rounded-3xl">
+                    <header class="flex justify-between items-center p-6 bg-white border-b">
+                        <div class="text-xl font-semibold text-emerald-600">BrineBase</div>
+                        <button class="p-2 hover:bg-gray-100 rounded-full">
+                            <i class="lucide lucide-menu h-6 w-6"></i>
+                        </button>
+                    </header>
+                    
+                    <main class="p-6">
+                        <div class="mb-8">
+                            <h1 class="text-3xl font-bold mb-3">Track Your Ferments</h1>
+                            <p class="text-gray-600 leading-relaxed">Document, monitor, and perfect your fermentation projects with ease.</p>
                         </div>
 
-                        <!-- Tasting Notes -->
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium text-gray-700">Tasting Notes</label>
-                            <textarea rows="4" placeholder="Describe the taste, texture, and aroma..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"></textarea>
-                        </div>
-
-                        <!-- Taste Intensity -->
-                        <div class="space-y-4">
-                            <label class="block text-sm font-medium text-gray-700">Taste Intensity</label>
-                            <div class="space-y-6">
-                                <div>
-                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                        <span>Saltiness</span>
-                                        <span>7/10</span>
-                                    </div>
-                                    <input type="range" min="0" max="10" value="7" class="w-full accent-emerald-600" />
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                        <span>Sourness</span>
-                                        <span>5/10</span>
-                                    </div>
-                                    <input type="range" min="0" max="10" value="5" class="w-full accent-emerald-600" />
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                        <span>Spiciness</span>
-                                        <span>8/10</span>
-                                    </div>
-                                    <input type="range" min="0" max="10" value="8" class="w-full accent-emerald-600" />
-                                </div>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-emerald-50 p-4 rounded-xl">
+                                <h3 class="text-emerald-600 font-medium mb-1">Active</h3>
+                                <p class="text-3xl font-bold text-emerald-900">12</p>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-xl">
+                                <h3 class="text-amber-600 font-medium mb-1">Completed</h3>
+                                <p class="text-3xl font-bold text-amber-900">48</p>
                             </div>
                         </div>
 
-                        <!-- Add Flavor Profile Button -->
-                        <button class="w-full px-4 py-3 rounded-xl border-2 border-emerald-500 text-emerald-600 font-medium hover:bg-emerald-50 flex items-center justify-center gap-2">
-                            <i data-lucide="plus" class="w-5 h-5"></i>
-                            Add Flavor Profile
+                        <button class="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
+                            Start New Project
                         </button>
 
-                        <!-- Photo Upload -->
-                        <div class="space-y-3">
-                            <label class="block text-sm font-medium text-gray-700">Add Photos</label>
-                            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center">
-                                <i data-lucide="camera" class="w-12 h-12 mx-auto text-gray-400"></i>
-                                <p class="mt-2 text-sm text-gray-600">Add tasting photos</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Save Button -->
-                <div class="p-6 border-t border-gray-100">
-                    <button class="w-full bg-emerald-600 text-white rounded-xl py-4 font-medium hover-scale">
-                        Save Tasting Notes
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Flavor Profile Selection Page -->
-        <div class="device-frame">
-            <div class="content-container h-full bg-white flex flex-col">
-                <!-- Header -->
-                <div class="p-6 flex items-center justify-between border-b border-gray-100">
-                    <button class="text-gray-600">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <h2 class="text-xl font-bold text-gray-900">Flavor Profile</h2>
-                    <button class="text-emerald-600 font-medium">Done</button>
-                </div>
-
-                <!-- Content -->
-                <div class="flex-1 p-6 overflow-y-auto custom-scrollbar">
-                    <div class="space-y-8">
-                        <!-- Primary Tastes -->
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="utensils" class="w-5 h-5 text-gray-700"></i>
-                                <h3 class="text-lg font-medium text-gray-900">Primary Tastes</h3>
-                            </div>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">Sour</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Sweet</button>
-                                <button class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">Salty</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Bitter</button>
-                                <button class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">Umami</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Spicy</button>
-                            </div>
-                        </div>
-
-                        <!-- Texture -->
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="layers" class="w-5 h-5 text-gray-700"></i>
-                                <h3 class="text-lg font-medium text-gray-900">Texture</h3>
-                            </div>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">Crunchy</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Soft</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Crisp</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Tender</button>
-                            </div>
-                        </div>
-
-                        <!-- Aromatics -->
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="wind" class="w-5 h-5 text-gray-700"></i>
-                                <h3 class="text-lg font-medium text-gray-900">Aromatics</h3>
-                            </div>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">Garlicky</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Herbal</button>
-                                <button class="px-4 py-3 rounded-xl bg-gray-50 text-gray-700 border-2 border-gray-200">Earthy</button>
-                                <button class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 border-2 border-emerald-500">Funky</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tasting History Page -->
-        <div class="device-frame">
-            <div class="content-container h-full bg-white flex flex-col">
-                <!-- Header -->
-                <div class="p-6 flex items-center justify-between border-b border-gray-100">
-                    <button class="text-gray-600">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <h2 class="text-xl font-bold text-gray-900">Tasting History</h2>
-                    <div class="w-6"></div>
-                </div>
-
-                <!-- Content -->
-                <div class="flex-1 p-6 overflow-y-auto custom-scrollbar">
-                    <div class="space-y-6">
-                        <!-- Timeline -->
-                        <div class="space-y-6">
-                            <!-- Day Entry -->
-                            <div class="relative pl-8 pb-6 border-l-2 border-emerald-200">
-                                <div class="absolute left-0 transform -translate-x-1/2 flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i>
-                                </div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="mt-8">
+                            <h2 class="text-lg font-semibold mb-4">Recent Projects</h2>
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start mb-3">
                                         <div>
-                                            <h3 class="font-medium text-gray-900">Day 5</h3>
-                                            <p class="text-sm text-gray-500">March 20, 2024</p>
+                                            <h3 class="font-medium">Napa Cabbage Kimchi</h3>
+                                            <p class="text-sm text-gray-500">Started 3 days ago</p>
                                         </div>
-                                        <span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Active</span>
+                                        <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
                                     </div>
-                                    <p class="text-gray-600 text-sm">Strong fermentation aroma, developing sourness, still crunchy texture.</p>
-                                    <div class="mt-3 flex gap-2">
-                                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs">Sour</span>
-                                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs">Crunchy</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Day Entry -->
-                            <div class="relative pl-8 pb-6 border-l-2 border-emerald-200">
-                                <div class="absolute left-0 transform -translate-x-1/2 flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i>
-                                </div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="flex justify-between items-start mb-3">
-                                        <div>
-                                            <h3 class="font-medium text-gray-900">Day 3</h3>
-                                            <p class="text-sm text-gray-500">March 18, 2024</p>
-                                        </div>
-                                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-sm">Past</span>
-                                    </div>
-                                    <p class="text-gray-600 text-sm">Beginning to develop sourness, very crunchy, salt level perfect.</p>
-                                    <div class="mt-3 flex gap-2">
-                                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs">Salty</span>
-                                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs">Fresh</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Day Entry -->
-                            <div class="relative pl-8">
-                                <div class="absolute left-0 transform -translate-x-1/2 flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i>
-                                </div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="flex justify-between items-start mb-3">
-                                        <div>
-                                            <h3 class="font-medium text-gray-900">Day 1</h3>
-                                            <p class="text-sm text-gray-500">March 16, 2024</p>
-                                        </div>
-                                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-sm">Past</span>
-                                    </div>
-                                    <p class="text-gray-600 text-sm">Fresh ingredients prepared, salt brine added. Starting fermentation.</p>
-                                    <div class="mt-3 flex gap-2">
-                                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs">Fresh</span>
-                                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs">Crisp</span>
+                                    <div class="h-2 bg-gray-100 rounded-full">
+                                        <div class="h-2 bg-emerald-500 rounded-full w-3/4"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </main>
                 </div>
 
-                <!-- Add Tasting Button -->
-                <div class="p-6 border-t border-gray-100">
-                    <button class="w-full bg-emerald-600 text-white rounded-xl py-4 font-medium hover-scale flex items-center justify-center gap-2">
-                        <i data-lucide="plus-circle" class="w-5 h-5"></i>
-                        Add New Tasting
-                    </button>
+                <!-- Dashboard Hi-Fi -->
+                <div class="prototype w-[375px] h-[812px] overflow-hidden rounded-3xl">
+                    <header class="flex justify-between items-center p-6 bg-white border-b">
+                        <div class="text-xl font-semibold">Dashboard</div>
+                        <div class="flex gap-2">
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <i class="lucide lucide-search h-5 w-5"></i>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <i class="lucide lucide-filter h-5 w-5"></i>
+                            </button>
+                        </div>
+                    </header>
+
+                    <main class="p-6">
+                        <div class="flex gap-4 mb-6 overflow-x-auto pb-2">
+                            <button class="px-4 py-2 bg-emerald-600 text-white rounded-full whitespace-nowrap">
+                                All Projects
+                            </button>
+                            <button class="px-4 py-2 bg-white border text-gray-600 rounded-full whitespace-nowrap">
+                                Active
+                            </button>
+                            <button class="px-4 py-2 bg-white border text-gray-600 rounded-full whitespace-nowrap">
+                                Completed
+                            </button>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-xl border border-gray-100">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="font-medium">Napa Cabbage Kimchi</h3>
+                                        <p class="text-sm text-gray-500">Started 3 days ago</p>
+                                    </div>
+                                    <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
+                                </div>
+                                <div class="h-2 bg-gray-100 rounded-full mb-3">
+                                    <div class="h-2 bg-emerald-500 rounded-full w-3/4"></div>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">75% Complete</span>
+                                    <span class="text-gray-500">2 days remaining</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-xl border border-gray-100">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="font-medium">Classic Sauerkraut</h3>
+                                        <p class="text-sm text-gray-500">Started 1 week ago</p>
+                                    </div>
+                                    <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Active</span>
+                                </div>
+                                <div class="h-2 bg-gray-100 rounded-full mb-3">
+                                    <div class="h-2 bg-emerald-500 rounded-full w-1/2"></div>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">50% Complete</span>
+                                    <span class="text-gray-500">1 week remaining</span>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer class="fixed bottom-0 w-[375px] bg-white border-t">
+                        <div class="flex justify-around p-4">
+                            <button class="p-2 text-emerald-600">
+                                <i class="lucide lucide-layout-dashboard h-6 w-6"></i>
+                            </button>
+                            <button class="p-2 text-gray-400">
+                                <i class="lucide lucide-plus-circle h-6 w-6"></i>
+                            </button>
+                            <button class="p-2 text-gray-400">
+                                <i class="lucide lucide-user h-6 w-6"></i>
+                            </button>
+                        </div>
+                    </footer>
+                </div>
+
+                <!-- New Ferment Hi-Fi -->
+                <div class="prototype w-[375px] h-[812px] overflow-hidden rounded-3xl">
+                    <header class="flex items-center p-6 bg-white border-b">
+                        <button class="p-2 -ml-2 hover:bg-gray-100 rounded-full mr-2">
+                            <i class="lucide lucide-arrow-left h-5 w-5"></i>
+                        </button>
+                        <div class="text-xl font-semibold">New Ferment</div>
+                    </header>
+
+                    <main class="p-6">
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Project Name</label>
+                                <input 
+                                    type="text" 
+                                    class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    placeholder="e.g., Napa Cabbage Kimchi"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Type</label>
+                                <select class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none appearance-none bg-white">
+                                    <option>Vegetable Ferment</option>
+                                    <option>Kombucha</option>
+                                    <option>Kefir</option>
+                                    <option>Hot Sauce</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                <textarea 
+                                    class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" 
+                                    rows="4"
+                                    placeholder="Add notes about your fermentation project..."
+                                ></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Expected Duration</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <input 
+                                            type="number" 
+                                            class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                            placeholder="Duration"
+                                        >
+                                    </div>
+                                    <div>
+                                        <select class="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none appearance-none bg-white">
+                                            <option>Days</option>
+                                            <option>Weeks</option>
+                                            <option>Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Add Photo</label>
+                                <button class="w-full border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-emerald-500 transition-colors">
+                                    <i class="lucide lucide-image-plus h-8 w-8 mx-auto mb-2 text-gray-400"></i>
+                                    <p class="text-sm text-gray-500">Click to upload or drag and drop</p>
+                                </button>
+                            </div>
+
+                            <button class="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
+                                Create Project
+                            </button>
+                        </form>
+                    </main>
                 </div>
             </div>
-        </div>
-
-        <!-- Ferment Detail Page -->
-        <div class="device-frame">
-            <div class="content-container h-full bg-white flex flex-col">
-                <!-- Header Image -->
-                <div class="relative h-64 bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?auto=format&fit=crop&w=800&q=80" alt="Kimchi" class="w-full h-full object-cover" />
-                    <button class="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                        <i data-lucide="chevron-left" class="w-6 h-6 text-gray-700"></i>
-                    </button>
-                    <button class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                        <i data-lucide="edit" class="w-6 h-6 text-gray-700"></i>
-                    </button>
-                </div>
-
-                <!-- Content -->
-                <div class="flex-1 px-6 py-8 overflow-y-auto custom-scrollbar">
-                    <!-- Header -->
-                    <div class="space-y-2">
-                        <h1 class="text-2xl font-bold text-gray-900">Traditional Kimchi</h1>
-                        <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Spicy</span>
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm">Tangy</span>
-                        </div>
-                    </div>
-
-                    <!-- Progress -->
-                    <div class="mt-8 space-y-3">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-gray-600">Progress</span>
-                            <span class="text-emerald-600 font-medium">3 days left</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-emerald-600 rounded-full h-2" style="width: 75%"></div>
-                        </div>
-                        <div class="flex justify-between text-xs text-gray-500">
-                            <span>Started Mar 15</span>
-                            <span>Ready Mar 22</span>
-                        </div>
-                    </div>
-
-                    <!-- Description -->
-                    <div class="mt-8 space-y-3">
-                        <h2 class="text-lg font-medium text-gray-900">Description</h2>
-                        <p class="text-gray-600 leading-relaxed">
-                            Traditional Korean kimchi recipe with Napa cabbage, Korean red pepper flakes, garlic, ginger, and fish sauce. Fermented for 7 days at room temperature for the perfect balance of flavors.
-                        </p>
-                    </div>
-
-                    <!-- Photos -->
-                    <div class="mt-8 space-y-3">
-                        <h2 class="text-lg font-medium text-gray-900">Photos</h2>
-                        <div class="grid grid-cols-3 gap-2">
-                            <img src="https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?auto=format&fit=crop&w=800&q=80" alt="Kimchi" class="w-full h-24 object-cover rounded-xl" />
-                            <img src="https://images.unsplash.com/photo-1583224874284-49d26e1c8c32?auto=format&fit=crop&w=800&q=80" alt="Kimchi process" class="w-full h-24 object-cover rounded-xl" />
-                            <div class="w-full h-24 bg-gray-100 rounded-xl flex items-center justify-center">
-                                <i data-lucide="plus" class="h-6 w-6 text-gray-400"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Button -->
-                <div class="p-6 border-t border-gray-100">
-                    <button class="w-full bg-emerald-600 text-white rounded-xl py-4 font-medium hover-scale flex items-center justify-center gap-2">
-                        <i data-lucide="check-circle" class="w-5 h-5"></i>
-                        Mark as Complete
-                    </button>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
 </body>
 </html> 
