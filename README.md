@@ -1,57 +1,96 @@
 # BrineBase
 
-BrineBase is a modern web application for tracking and managing fermentation projects. It helps fermentation enthusiasts document their recipes, monitor progress, and record tasting notes.
-
-## Overview
-
-BrineBase provides a comprehensive platform for:
-- Creating and managing fermentation recipes
-- Tracking fermentation progress
-- Recording tasting notes and flavor profiles
-- Building a personal fermentation journal
-- Sharing recipes with the community
+Track, monitor, and perfect your fermentation projects. Document, monitor, and share your fermentation journey.
 
 ## Project Structure
 
 ```
 brinebase/
-├── product/
-│   ├── planning/     # Project requirements, roadmap, and user stories
-│   ├── design/       # Design assets, wireframes, and style guide
-│   └── templates/    # Reusable templates and components
-├── docs/            # Project documentation
-└── ui/             # User interface implementation
+├── apps/                    # Application code
+│   ├── web/                # Main web application
+│   │   ├── src/           # Source code
+│   │   ├── public/        # Public assets
+│   │   └── package.json   # App-specific dependencies
+│   └── mobile/            # Future mobile app
+│
+├── marketing/              # Marketing website
+│   ├── src/              # Marketing site source
+│   ├── public/           # Public assets
+│   └── package.json      # Marketing site dependencies
+│
+├── design/                # UI/UX Design System
+│   ├── ui.html          # UI designs and prototypes
+│   ├── assets/          # Design assets
+│   └── docs/            # Design documentation
+│
+├── packages/              # Shared packages
+│   ├── ui/              # Design system components
+│   │   ├── src/
+│   │   └── package.json
+│   └── utils/           # Shared utilities
+│       ├── src/
+│       └── package.json
+│
+└── docs/                  # Project documentation
 ```
 
 ## Getting Started
 
-1. Clone the repository
-2. Open `ui.html` in your browser to view the current prototype
-3. Check `docs/` for detailed documentation
+### Prerequisites
 
-## Features
+- Node.js (v18 or later)
+- pnpm (v8 or later)
 
-- Mobile-first design (optimized for 375x812px)
-- Multiple views:
-  - Landing page
-  - Dashboard
-  - New Ferment creation
-  - Tasting Entry
-  - Flavor Profile
-  - Tasting History
-- Modern UI with Tailwind CSS
-- Lucide icons for consistent visual language
+### Installation
 
-## Documentation
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/brinebase.git
+cd brinebase
+```
 
-- Product Requirements Document: `docs/brinebase-prd.md`
-- User Roles and Permissions: `docs/role.md`
-- Additional documentation in `docs/` directory
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Start development servers:
+```bash
+# Start all projects
+pnpm dev
+
+# Start specific project
+pnpm --filter @brinebase/web dev    # Main app
+pnpm --filter @brinebase/marketing dev  # Marketing site
+```
+
+## Development
+
+### Main Application (`apps/web`)
+The main BrineBase application for tracking and managing fermentation projects.
+
+### Marketing Site (`marketing/`)
+The public-facing marketing website showcasing BrineBase features and benefits.
+
+### Design System (`packages/ui`)
+Shared UI components and design tokens used across all BrineBase applications.
+
+### Utilities (`packages/utils`)
+Common utilities and helper functions shared across projects.
+
+## Scripts
+
+- `pnpm dev` - Start development environment
+- `pnpm build` - Build all packages and applications
+- `pnpm lint` - Run linting across all projects
 
 ## Contributing
 
-This project is under active development. Please refer to the documentation for contribution guidelines.
+1. Create a feature branch (`git checkout -b feature/amazing-feature`)
+2. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+3. Push to the branch (`git push origin feature/amazing-feature`)
+4. Open a Pull Request
 
 ## License
 
-[License details to be determined]
+[MIT License](LICENSE)
